@@ -1,39 +1,55 @@
-# gdx-liftoff-demo
+# Projeto LibGDX - Android Only
 
-A [libGDX](https://libgdx.com/) project generated with [gdx-liftoff](https://github.com/libgdx/gdx-liftoff).
+Um projeto [libGDX](https://libgdx.com/) configurado exclusivamente para desenvolvimento Android.
 
-This project was generated with a template including simple application launchers and an `ApplicationAdapter` extension that draws libGDX logo.
+Este projeto foi gerado com [gdx-liftoff](https://github.com/libgdx/gdx-liftoff) e configurado para focar apenas na plataforma Android, removendo dependências e configurações de outras plataformas.
 
-## Platforms
+## Plataformas
 
-- `core`: Main module with the application logic shared by all platforms.
-- `lwjgl3`: Primary desktop platform using LWJGL3; was called 'desktop' in older docs.
-- `android`: Android mobile platform. Needs Android SDK.
-- `ios`: iOS mobile platform using RoboVM.
-- `html`: Web platform using GWT and WebGL. Supports only Java projects. **(Removido)**
+- `core`: Módulo principal com a lógica do aplicativo compartilhada por todas as plataformas.
+- `android`: Plataforma móvel Android. Requer Android SDK configurado.
+
+**Nota:** Este projeto foi configurado para suportar **apenas Android**. As seguintes plataformas foram removidas:
+- ~~LWJGL3 (Desktop)~~
+- ~~iOS~~
+- ~~HTML/Web~~
 
 ## Gradle
 
-This project uses [Gradle](https://gradle.org/) to manage dependencies.
-The Gradle wrapper was included, so you can run Gradle tasks using `gradlew.bat` or `./gradlew` commands.
-Useful Gradle tasks and flags:
+Este projeto usa [Gradle](https://gradle.org/) para gerenciar dependências.
+O wrapper do Gradle está incluído, então você pode executar tarefas do Gradle usando `gradlew.bat` ou `./gradlew`.
 
-- `--continue`: when using this flag, errors will not stop the tasks from running.
-- `--daemon`: thanks to this flag, Gradle daemon will be used to run chosen tasks.
-- `--offline`: when using this flag, cached dependency archives will be used.
-- `--refresh-dependencies`: this flag forces validation of all dependencies. Useful for snapshot versions.
-- `android:lint`: performs Android project validation.
-- `build`: builds sources and archives of every project.
-- `cleanEclipse`: removes Eclipse project data.
-- `cleanIdea`: removes IntelliJ project data.
-- `clean`: removes `build` folders, which store compiled classes and built archives.
-- `eclipse`: generates Eclipse project data.
-- `html:dist`: compiles GWT sources. The compiled application can be found at `html/build/dist`: you can use any HTTP server to deploy it.
-- `html:superDev`: compiles GWT sources and runs the application in SuperDev mode. It will be available at [localhost:8080/html](http://localhost:8080/html). Use only during development.
-- `idea`: generates IntelliJ project data.
-- `lwjgl3:jar`: builds application's runnable jar, which can be found at `lwjgl3/build/libs`.
-- `lwjgl3:run`: starts the application.
-- `test`: runs unit tests (if any).
+Tarefas úteis do Gradle e flags:
 
-Note that most tasks that are not specific to a single project can be run with `name:` prefix, where the `name` should be replaced with the ID of a specific project.
-For example, `core:clean` removes `build` folder only from the `core` project.
+- `--continue`: ao usar esta flag, os erros não impedirão a execução das tarefas.
+- `--daemon`: graças a esta flag, o daemon do Gradle será usado para executar as tarefas escolhidas.
+- `--offline`: ao usar esta flag, arquivos de dependência em cache serão usados.
+- `--refresh-dependencies`: esta flag força a validação de todas as dependências. Útil para versões snapshot.
+- `android:lint`: realiza validação do projeto Android.
+- `android:assembleDebug`: compila o APK em modo debug.
+- `android:assembleRelease`: compila o APK em modo release (requer configuração de keystore).
+- `android:installDebug`: instala o APK debug em um dispositivo/emulador conectado.
+- `build`: compila fontes e arquivos de cada projeto.
+- `cleanEclipse`: remove dados do projeto Eclipse.
+- `cleanIdea`: remove dados do projeto IntelliJ.
+- `clean`: remove pastas `build`, que armazenam classes compiladas e arquivos construídos.
+- `eclipse`: gera dados do projeto Eclipse.
+- `idea`: gera dados do projeto IntelliJ.
+- `test`: executa testes unitários (se houver).
+
+Note que a maioria das tarefas que não são específicas de um único projeto podem ser executadas com o prefixo `name:`, onde `name` deve ser substituído pelo ID de um projeto específico.
+Por exemplo, `core:clean` remove a pasta `build` apenas do projeto `core`.
+
+## Requisitos
+
+- JDK 17 ou superior
+- Android SDK configurado
+- Variável de ambiente `ANDROID_HOME` apontando para o diretório do Android SDK
+
+## Como Executar
+
+Para executar o projeto no Android:
+
+1. Conecte um dispositivo Android ou inicie um emulador
+2. Execute: `./gradlew android:installDebug` (Linux/Mac) ou `gradlew.bat android:installDebug` (Windows)
+3. O aplicativo será instalado e iniciado no dispositivo/emulador
