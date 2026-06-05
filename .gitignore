@@ -1,43 +1,63 @@
 ```
-# Dependencies
-node_modules/
-
-# Build artifacts
-dist/
+# Compiled and build artifacts
+*.class
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.out
 build/
+dist/
+
+# Dependencies
+libgdx/
+gradle/
+.gradle/
 target/
 
-# Python
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Coverage
+coverage/
+htmlcov/
+.coverage
+
+# Python specific
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 .Python
-env/
-venv/
-.venv/
-.venv.bak/
-pip-log.txt
-pip-delete-this-directory.txt
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.log
-*.pot
-*.pyc
-*.pyo
-*.pyd
-.MF
-tags
-TAGS
-id
-*.swp
-*.swo
-*~
-.DS_Store
-Thumbs.db
+*.so
+*.egg-info/
+.eggs/
+
+# Java specific
+*.class
+*.jar
+*.war
+*.ear
+
+# My-LibGDX specific build artifacts
+"My-LibGDX[Uptade]/Projeto-LibGDX-1.14.0.4_snapshot[s\\303\\263-android]/build/"
 ```
