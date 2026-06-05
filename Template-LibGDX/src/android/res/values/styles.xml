@@ -1,5 +1,0 @@
-<resources>
-    <style name="GdxTheme" parent="android:Theme.NoTitleBar.Fullscreen">
-        <item name="android:windowBackground">@android:color/black</item>
-    </style>
-</resources>
